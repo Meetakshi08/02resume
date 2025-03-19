@@ -15,11 +15,6 @@ function Navbar() {
             ABOUT
           </Link>
         </li>
-        {/* <li>
-          <Link to="/services" className="text-white hover:text-teal-300 transition duration-300">
-            SERVICES
-          </Link>
-        </li> */}
         <li>
           <Link to="/contact" className="text-white hover:text-teal-300 transition duration-300">
             CONTACT
