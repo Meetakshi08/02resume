@@ -1,77 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Global styles */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  @apply bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-} */
+/* Ensure sections fit smaller screens */
+.container {
+  @apply max-w-6xl mx-auto px-4 md:px-8 lg:px-12;
+}
 
+/* Buttons */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: gray;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  @apply rounded-lg border border-transparent px-4 py-2 text-base md:text-lg font-medium bg-gray-600 
+    hover:border-blue-500 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Responsive Typography */
+h1 {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+}
+h2 {
+  @apply text-2xl md:text-3xl font-semibold;
+}
+p {
+  @apply text-sm md:text-base leading-relaxed;
+}
+
+/* Responsive Grid */
+.grid-layout {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* Image Responsiveness */
+img {
+  @apply w-full h-auto object-cover;
+}
+
+/* Slick Slider Fix */
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .grid-layout {
+    @apply grid-cols-1; /* Single column for mobile */
   }
-  a:hover {
-    color: #747bff;
+  
+  h1 {
+    @apply text-3xl; /* Reduce heading size */
   }
+
   button {
-    background-color: #f9f9f9;
+    @apply text-sm px-3 py-2; /* Smaller button */
   }
 }
 
-
-.slick-slide > div{
-  margin:0 10px;
+@media screen and (max-width: 480px) {
+  .container {
+    @apply px-2; /* Reduce padding */
+  }
 }
-
