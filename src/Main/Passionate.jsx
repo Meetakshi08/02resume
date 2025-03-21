@@ -8,7 +8,7 @@ function Passionate() {
     <>
     <div className="h-[700px] flex">
 
-        <img src="/sofa.png" alt="house"  className=''/>
+        <img src="/02resume/sofa.png" alt="house"  className=''/>
 
         <div>
         <h3 className='text-4xl text-center  '>WHO WE ARE</h3>
