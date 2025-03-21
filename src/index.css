@@ -2,53 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ensure full-width container */
-.container {
-  @apply max-w-6xl mx-auto px-4 sm:px-6 md:px-8;
-}
-
-/* Make sections stack on small screens */
-.grid-layout {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
-}
-
-/* Fix text size for smaller screens */
-h1 {
-  @apply text-3xl sm:text-4xl md:text-5xl font-bold leading-tight;
-}
-
-p {
-  @apply text-sm sm:text-base md:text-lg leading-relaxed;
-}
-
-/* Make images responsive */
-img {
-  @apply w-full h-auto object-cover;
-}
-
-/* Navbar fixes */
+/* ===== Navbar Styling ===== */
 .navbar {
-  @apply flex flex-col md:flex-row items-center justify-between py-4 px-6;
+  @apply flex flex-col md:flex-row items-center justify-between w-full bg-white shadow-md p-4;
 }
 
-/* Button fixes */
-button {
-  @apply w-full sm:w-auto px-4 py-2 text-sm sm:text-base rounded-lg bg-blue-500 text-white 
-    hover:bg-blue-600 transition-all duration-300 focus:ring-2 focus:ring-blue-500;
+.navbar a {
+  @apply text-sm md:text-base px-3 py-2 hover:text-blue-500;
 }
 
-/* Media Queries */
+@media screen and (max-width: 768px) {
+  .navbar {
+    @apply flex-wrap justify-center space-y-2;
+  }
+}
+
+/* ===== Fix Image Overflow & Responsiveness ===== */
+img {
+  @apply w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg;
+}
+
+/* ===== Stack Sections on Mobile ===== */
+.grid-layout {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
 @media screen and (max-width: 768px) {
   .grid-layout {
-    @apply grid-cols-1;
-  }
-
-  .navbar {
-    @apply flex-col space-y-4;
-  }
-
-  h1 {
-    @apply text-2xl;
+    @apply grid-cols-1 text-center;
   }
 }
 
+/* ===== Fix Text Alignment Issues ===== */
+.text-section {
+  @apply text-center md:text-left px-4 md:px-8;
+}
+
+/* ===== Ensure Full Page Responsiveness ===== */
+body {
+  @apply overflow-x-hidden;
+}
+
+/* Extra Small Devices (Phones) */
+@media screen and (max-width: 576px) {
+  body {
+    @apply overflow-x-auto;
+  }
+}
